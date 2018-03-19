@@ -5,6 +5,8 @@ Fakedoors Shop Server
 
 * [Node](https://nodejs.org)
 * [MySQL](https://www.mysql.com)
+* Optional:
+	* [Compass](http://compass-style.org/) (To edit PDF generators SASS stylesheet)
 
 ## MySQL
 * Configuration: ```app/cfg/mysql.js```
