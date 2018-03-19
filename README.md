@@ -7,6 +7,7 @@ Fakedoors Shop Server
 * [MySQL](https://www.mysql.com)
 * Optional:
 	* [Compass](http://compass-style.org/) (To edit PDF generators SASS stylesheet)
+	* [Postman](https://www.getpostman.com/) (Try and use requests the easy way)
 
 ## MySQL
 * Configuration: ```app/cfg/mysql.js```
