@@ -1,0 +1,654 @@
+{
+	"info": {
+		"name": "Fakedoors",
+		"_postman_id": "fda8c363-f4fb-3c2b-4f18-061580d7d977",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"description": "",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/product/234",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"234"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounting",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "Required!"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "alex32",
+									"description": "username or email required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "d",
+									"description": "username or email required",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "passw",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "client_hash",
+									"value": "true",
+									"description": "Additional",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "Required!"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "alex32",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Alex",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Roidl",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passw",
+									"type": "text"
+								},
+								{
+									"key": "password_repeat",
+									"value": "passw",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alex@roidl.de",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "client_hash",
+									"value": "true",
+									"description": "Additional",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Protected",
+			"description": "",
+			"item": [
+				{
+					"name": "Purchase",
+					"description": "",
+					"item": [
+						{
+							"name": "Purchase",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2ODQxMTA0LCJleHAiOjE1MTY5Mjc1MDR9.2VkXXi43wqRjRXSr6cqY9xVu13vRyyvA3pjkEu947Eo"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "paymethod_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "address_id",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "data",
+											"value": "[{\"id\":1,\"quantity\":3},{\"id\":9,\"quantity\":23}]",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "preview",
+											"value": "true",
+											"description": "Additional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/purchases/new",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"purchases",
+										"new"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Purchases",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2NzMzNjY5LCJleHAiOjE1MTY4MjAwNjl9.GhP-D7xmNirylGrFsC18MCxlH0unPsp4hAUbdJ1UHHg",
+										"description": "Authentification"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/purchases",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"purchases"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Purchase",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTE2ODI3Nzk2LCJleHAiOjE1MTY5MTQxOTZ9.rcc0pjF0c6WgM8O8F72A6q5lNOQlANmQJOjOEySXQk0"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/purchases/12/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"purchases",
+										"12",
+										""
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Purchase PDF",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2ODQxMTA0LCJleHAiOjE1MTY5Mjc1MDR9.2VkXXi43wqRjRXSr6cqY9xVu13vRyyvA3pjkEu947Eo",
+										"description": "Authentification"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "filename",
+											"value": "testäß",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "Lorem Ipsum Dolor Sit Admet",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/purchases/1/pdf",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"purchases",
+										"1",
+										"pdf"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Address",
+					"description": "",
+					"item": [
+						{
+							"name": "Addresses",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2NzEwNTA3LCJleHAiOjE1MTY3OTY5MDd9.QZ9IMRwhT_MtnYLDLDIo9H6cdqUfy1QmRYFPGPdO2FI",
+										"description": "Authentification"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/addresses",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addresses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add address",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2ODQxMTA0LCJleHAiOjE1MTY5Mjc1MDR9.2VkXXi43wqRjRXSr6cqY9xVu13vRyyvA3pjkEu947Eo"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "first_name",
+											"value": "Alex",
+											"description": "Additional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "",
+											"description": "Additional",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "street",
+											"value": "Teststraße",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "street_nr",
+											"value": "13",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Einbahnstraße",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "zip",
+											"value": "1337",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "planet",
+											"value": "Der Planet",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "dimension",
+											"value": "XYZ Dimension",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "additional",
+											"value": "Add",
+											"description": "Additional",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/addresses/add",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"addresses",
+										"add"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Paymethod",
+					"description": "",
+					"item": [
+						{
+							"name": "Pay methods",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2NzEwNTA3LCJleHAiOjE1MTY3OTY5MDd9.QZ9IMRwhT_MtnYLDLDIo9H6cdqUfy1QmRYFPGPdO2FI",
+										"description": "Authentification"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "localhost:3000/paymethods",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paymethods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add paymethod",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2ODQxMTA0LCJleHAiOjE1MTY5Mjc1MDR9.2VkXXi43wqRjRXSr6cqY9xVu13vRyyvA3pjkEu947Eo"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "type",
+											"value": "PayPal",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "data",
+											"value": "Lorem Ipsum Dolor Sit Admet",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/paymethods/add",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"paymethods",
+										"add"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2NzMxMTIwLCJleHAiOjE1MTY4MTc1MjB9.5j2Ly3dbvjgyHKKcdGfrlvMA14mtWngeJxJfpJlvRzA",
+								"description": "Authentification"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/account",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"account"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"description": "",
+			"item": [
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTE2NzE2ODQzLCJleHAiOjE1MTY4MDMyNDN9._LxjiF6o1iiN6vrkKlnhtuuEddcARWuaV1wbHGQo2b8"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "product",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Produkt",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "27",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "beschr",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "image_path",
+									"value": "notfound.jpg",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "333",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/products/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"add"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,73 @@
+| <style type="text/css">
+include ../css/style.css
+
+| header { background-image: url(#{base64Img.header}); }
+| table th { background-image: url(#{base64Img.th}); }
+| </style>
+
+header Purchase ##{purchaseId}
+
+h3 General
+table
+	tr
+		th Payment 
+		th Time
+	tr
+		td #{payMethod}
+		td #{time}
+		
+h3 Delivery address
+table
+	tr
+		th Name
+		th Street
+		th City
+		th ZIP
+	tr
+		td #{address.name}
+		td #{address.street}
+		td #{address.city}
+		td #{address.zip}
+	tr
+		th Planet
+		th Dimension
+	tr
+		td #{address.planet}
+		td #{address.dimension}
+
+h3 Customer
+table
+	tr
+		th Username 
+		th Name 
+		th Email 
+	tr
+		td #{user.username}
+		td #{user.firstName} #{user.lastName}
+		td #{user.email}
+		
+h3 Products
+table
+	tr
+		th Name
+		th Price
+		th Quantity
+		th Shipping
+		th Total
+		
+	each item in items
+		tr
+			td= item.name
+			td #{item.price} SHM
+			td= item.quantity
+			td #{item.shipping} SHM
+			td #{item.total} SHM
+			
+	tr.tr-empty
+		td(colspan="5") &nbsp;
+		
+	tr 
+		th(colspan="5") Total
+	tr
+		td(colspan="4") &nbsp;
+		td #{total} SHM
